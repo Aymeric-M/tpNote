@@ -4,21 +4,40 @@ Style pour les pièces noires.
 
 .pion-noir {
     background-image: url("noir-pion.gif");
+    position: absolute;
 }
 
 .tour-noir {
+    width: 10px;
+    padding: 1rem;
+    font-size:1.5rem ;
+    height: 10px;
+    display: block;
+    border-radius: 50%;
+    margin-top: 0.5rem;
+    background-image: url("noir-tour.gif");
+    position: absolute;
+
 }
 
 .cavalier-noir {
+    background-image: url("noir-cavalier.gif");
+    position: absolute;
 }
 
 .fou-noir {
+    background-image: url("noir-fou.gif");
+    position: absolute;
 }
 
 .roi-noir {
+    background-image: url("noir-roi.gif");
+    position: absolute;
 }
 
 .reine-noir {
+    background-image: url("noir-reine.gif");
+    position: absolute;
 }
 
 
@@ -27,21 +46,33 @@ Style pour les pièces blanches.
 */
 
 .pion-blanc {
+    background-image: url("blanc-pion.gif");
+    position: absolute;
 }
 
 .tour-blanc {
+    background-image: url("blanc-tour.gif");
+    position: absolute;
 }
 
 .cavalier-blanc {
+    background-image: url("blanc-cavalier.gif");
+    position: absolute;
 }
 
 .fou-blanc {
+    background-image: url("blanc-fou.gif");
+    position: absolute;
 }
 
 .roi-blanc {
+    background-image: url("blanc-roi.gif");
+    position: absolute;
 }
 
 .reine-blanc {
+    background-image: url("blanc-reine.gif");
+    position: absolute;
 }
 
 
