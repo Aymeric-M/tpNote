@@ -5,6 +5,8 @@ Style pour les pièces noires.
 .pion-noir {
     background-image: url("noir-pion.gif");
     position: absolute;
+    height: 40px;
+    width: 40px;
 }
 
 .tour-noir {
@@ -62,6 +64,7 @@ Style pour les pièces blanches.
 
 .fou-blanc {
     background-image: url("blanc-fou.gif");
+    height: 35px;
     position: absolute;
 }
 
@@ -104,13 +107,13 @@ body {
 
 
 div:nth-child(-2n+7),
-.case:nth-child(9) ~ div:nth-child(-2n+16),
+.case:nth-child(8) ~ div:nth-child(-2n+16),
 .case:nth-child(16) ~ div:nth-child(-2n+23),
 .case:nth-child(24) ~ div:nth-child(-2n+32),
-.case:nth-child(31) ~ div:nth-child(-2n+39),
+.case:nth-child(32) ~ div:nth-child(-2n+39),
 .case:nth-child(40) ~ div:nth-child(-2n+48),
 .case:nth-child(48) ~ div:nth-child(-2n+55),
 .case:nth-child(56) ~ div:nth-child(-2n+64){
-    background-color: black;
+    background-color: #595959;
 
 }

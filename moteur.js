@@ -37,13 +37,6 @@ var currentPlayer = 1; //test de thibo
 function changePlayer() {
     //on peut metre ca, c'est plus rapide
     currentPlayer = currentPlayer % 2 + 1;
-
-
-    if (currentPlayer == 1) {
-        currentPlayer = 2;
-    } else if (currentPlayer == 2) {
-        currentPlayer = 1;
-    }
 }
 
 /**
@@ -59,9 +52,18 @@ function addSelectedClassByPlayer(classList) {
 }
 
 //test thibo
-//function getElementsChildren(.hasChildNodes) {
+function getElementsChildren(element) {
+    const elementCh = document.getElementsByClassName(element);
+    if (elementCh.hasChildNodes()) {
 
-//}
+        return elementCh.childNodes;
+    }
+
+}
+
+function fonct2(element) {
+    element[0].innerHTML='<img src="noir-tour.gif" style="width: 60px;height: 60px;" alt="noir-tour">';
+}
 
 
 /**
