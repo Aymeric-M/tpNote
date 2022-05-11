@@ -90,24 +90,20 @@ body {
     display: grid;
     grid-gap: 0;
     grid-template-columns: repeat(8, 70px);
-    grid-template-rows: 0px repeat(8, 70px);
+    grid-template-rows: repeat(8, 70px);
 
 }
 
 .case {
-    padding: 20px;
     font-size: 150%;
     background-color: #d9d9d9;
     text-align: center;
 }
 
-.top {
-    grid-column-start: 1;
-    grid-column-end: 9;
-}
 
 
 
+div:nth-child(-2n+7),
 .case:nth-child(9) ~ div:nth-child(-2n+16),
 .case:nth-child(16) ~ div:nth-child(-2n+23),
 .case:nth-child(24) ~ div:nth-child(-2n+32),
