@@ -84,13 +84,13 @@ body {
     background-color: white;
 }
 .wrapper {
-    border: 50px;
+    border: 40px;
     width: 600px;
     margin: 0 auto;
     display: grid;
     grid-gap: 0;
     grid-template-columns: repeat(8, 70px);
-    grid-template-rows: 40px repeat(8, 70px) 40px;
+    grid-template-rows: 0px repeat(8, 70px);
 
 }
 
@@ -107,14 +107,14 @@ body {
 }
 
 
-.case:nth-child(-2n+9),
+
 .case:nth-child(9) ~ div:nth-child(-2n+16),
-.case:nth-child(17) ~ div:nth-child(-2n+25),
-.case:nth-child(25) ~ div:nth-child(-2n+32),
-.case:nth-child(33) ~ div:nth-child(-2n+41),
-.case:nth-child(41) ~ div:nth-child(-2n+48),
-.case:nth-child(49) ~ div:nth-child(-2n+57),
-.case:nth-child(57) ~ div:nth-child(-2n+64){
+.case:nth-child(16) ~ div:nth-child(-2n+23),
+.case:nth-child(24) ~ div:nth-child(-2n+32),
+.case:nth-child(31) ~ div:nth-child(-2n+39),
+.case:nth-child(40) ~ div:nth-child(-2n+48),
+.case:nth-child(48) ~ div:nth-child(-2n+55),
+.case:nth-child(56) ~ div:nth-child(-2n+64){
     background-color: black;
 
 }

@@ -59,9 +59,9 @@ function addSelectedClassByPlayer(classList) {
 }
 
 //test thibo
-function getElementsChildren(.hasChildNodes) {
+//function getElementsChildren(.hasChildNodes) {
 
-}
+//}
 
 
 /**
