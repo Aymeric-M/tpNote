@@ -12,7 +12,7 @@ var selectedHTMLClasses;
 /**
  * Récupère la deuxième classe déclaré dans votre liste.
  * Découpe votre ensemble de classe selon les espaces pour les mettre dans un tableau (split).
- * @param {*} selectedClasses 
+ * @param {*} selectedClasses
  * @returns la classe liée à une pièce si elle exise sinon renvoie vide.
  */
 function getCaseClass(selectedClasses) {
@@ -33,7 +33,12 @@ function getCaseClass(selectedClasses) {
 /**
  * Passe au joueur suivant.
  */
+var currentPlayer = 1; //test de thibo
 function changePlayer() {
+    //on peut metre ca, c'est plus rapide
+    currentPlayer = currentPlayer % 2 + 1;
+
+
     if (currentPlayer == 1) {
         currentPlayer = 2;
     } else if (currentPlayer == 2) {
@@ -53,6 +58,12 @@ function addSelectedClassByPlayer(classList) {
     }
 }
 
+//test thibo
+function getElementsChildren(.hasChildNodes) {
+
+}
+
+
 /**
  * Retire une classe selon le joueur courant d'une liste de classe liée à un élément HTML.
  * @param {*} classList liste des classes d'un élément HTML.
@@ -69,7 +80,7 @@ function removeSelectedClassByPlayer(classList) {
  * Fonction liée à l'évènement 'click'.
  * A MODIFIER
  */
-var play = function() {
+var play = function () {
     if (!currentSelection) {
         selectedHTML = this;
         selectedHTMLClasses = this.className;
