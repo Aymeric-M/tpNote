@@ -100,10 +100,82 @@ body {
     text-align: center;
 }
 
+#gameInfo {
+    width: 550px;
+    height: 175px;
+    margin: 0 auto;
+    border: 2px solid black;
+}
 
 
+#info {  
+    margin: 5px;  
+    font-size: 1.5em;  
+    height: 30px;  
+    background-color: #aaccbb;  
+    text-align: center; 
+} 
 
-div:nth-child(-2n+7),
+#score {
+    margin: 5px;  
+    font-size: 1.5em;  
+    height: 30px;    
+    background-color: #aaccbb;  
+    border-radius: 5px;  
+    text-align: center; 
+}
+
+
+.scoreJ1 {
+    font-size: larger;
+    font-weight: 600;
+    color: blue;
+    float: left;
+    margin-top: 5px;
+    margin-left: 100px;
+}
+
+.scoreJ2 {
+    font-size: larger;
+    font-weight: 600;
+    float: right;
+    color: red;
+    margin-top: 5px;
+    margin-right: 100px;
+}
+
+#rejouer {
+    clear: both;
+    text-align: left;
+    margin-top: 10px;
+    margin-left: 28px;
+}
+ 
+#clearScore {
+    clear: both;
+    text-align: right;
+    margin-top: 10px;
+    margin-left: 200px;
+
+}
+
+.button {
+    display: inline-block;
+    background-color: #7b38d8;
+    border-radius: 10px;
+    border: 4px double #cccccc;
+    color: #eeeeee;
+    text-align: center;
+    font-size: 1.2em;
+    padding: 10px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+
+.case:nth-child(1),
+.case:nth-child(1) ~ div:nth-child(-2n+7),
 .case:nth-child(9) ~ div:nth-child(-2n+16),
 .case:nth-child(16) ~ div:nth-child(-2n+23),
 .case:nth-child(24) ~ div:nth-child(-2n+32),
