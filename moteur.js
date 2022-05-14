@@ -53,16 +53,19 @@ function addSelectedClassByPlayer(classList) {
 
 //test thibo
 function getElementsChildren(element) {
-    const elementCh = document.getElementsByClassName(element);
-    if (elementCh.hasChildNodes()) {
+    let elementf = document.getElementsByClassName(element).childNodes;
 
-        return elementCh.childNodes;
+    for (let i = 0; i < elementf.length; i++) {
+        alert(elementf[i])
     }
-
+    return document.getElementsByClassName(element).childNodes;
 }
 
 function fonct2(element) {
-    element[0].innerHTML='<img src="noir-tour.gif" style="width: 60px;height: 60px;" alt="noir-tour">';
+    for (let i = 0; i < element.length; i++) {
+        alert(element[i])
+    }
+    element[1].innerHTML='<img src="noir-tour.gif" style="width: 60px;height: 60px;" alt="noir-tour">';
 }
 
 
@@ -77,6 +80,48 @@ function removeSelectedClassByPlayer(classList) {
         //classList.remove(votreClass);
     }
 }
+
+function rejouer(){
+    elements[0].classList.add("tour-noir");
+    elements[1].classList.add("cavalier-noir");
+    elements[2].classList.add("fou-noir");
+    elements[3].classList.add("roi-noir");
+    elements[4].classList.add("reine-noir");
+    elements[5].classList.add("fou-noir");
+    elements[6].classList.add("cavalier-noir");
+    elements[7].classList.add("tour-noir");
+    elements[8].classList.add("pion-noir");
+    elements[9].classList.add("pion-noir");
+    elements[10].classList.add("pion-noir");
+    elements[11].classList.add("pion-noir");
+    elements[12].classList.add("pion-noir");
+    elements[13].classList.add("pion-noir");
+    elements[14].classList.add("pion-noir");
+    elements[15].classList.add("pion-noir");
+
+
+
+
+    elements[48].classList.add("pion-blanc");
+    elements[49].classList.add("pion-blanc");
+    elements[50].classList.add("pion-blanc");
+    elements[51].classList.add("pion-blanc");
+    elements[52].classList.add("pion-blanc");
+    elements[53].classList.add("pion-blanc");
+    elements[54].classList.add("pion-blanc");
+    elements[55].classList.add("pion-blanc");
+    elements[56].classList.add("tour-blanc");
+    elements[57].classList.add("cavalier-blanc");
+    elements[58].classList.add("fou-blanc");
+    elements[59].classList.add("roi-blanc");
+    elements[60].classList.add("reine-blanc");
+    elements[61].classList.add("fou-blanc");
+    elements[62].classList.add("cavalier-blanc");
+    elements[63].classList.add("tour-blanc");
+
+
+}
+
 
 /**
  * Fonction liée à l'évènement 'click'.
@@ -101,4 +146,7 @@ var play = function () {
 var elements = document.getElementsByClassName("case");
 for (var i = 0; i < elements.length; i++) {
     elements[i].addEventListener('click', play, false);
+    //if(i===0){
+    //    elements[i].classList.add("cavalier-blanc");
+    //}
 }
