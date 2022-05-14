@@ -8,6 +8,8 @@ var scorePlayer2 = 0;
 var currentSelection = false;
 var selectedHTML;
 var selectedHTMLClasses;
+var arrayPlayer1Pieces = ["pion-blanc", "tour-blanc", "cavalier-blanc", "fou-blanc", "roi-blanc", "reine-blanc"];
+var arrayPlayer2Pieces = ["pion-noir", "tour-noir", "cavalier-noir", "fou-noir", "roi-noir", "reine-noir"];
 
 /**
  * Récupère la deuxième classe déclaré dans votre liste.
@@ -53,21 +55,34 @@ function addSelectedClassByPlayer(classList) {
 
 //test thibo
 function getElementsChildren(element) {
-    let elementf = document.getElementsByClassName(element).childNodes;
+    var elementf = document.getElementsByClassName("wrapper");
 
-    for (let i = 0; i < elementf.length; i++) {
-        alert(elementf[i])
+    for (let i = 0; i < 40; i++) {
+        elementf[0].childNodes[i].remove();
     }
     return document.getElementsByClassName(element).childNodes;
 }
 
 function fonct2(element) {
     for (let i = 0; i < element.length; i++) {
-        alert(element[i])
+        alert(element[i]);
     }
-    element[1].innerHTML='<img src="noir-tour.gif" style="width: 60px;height: 60px;" alt="noir-tour">';
+    element[1].innerHTML = '<img src="noir-tour.gif" style="width: 60px;height: 60px;" alt="noir-tour">';
 }
 
+
+function isCaseEmpty(HTMLElement) {
+    return getCaseClass(HTMLElement.className) === "";
+}
+
+function isCaseAllowed(HTMLElement) {
+    if (currentPlayer===1){
+        return arrayPlayer1Pieces.includes(getCaseClass(HTMLElement.className));
+    }else {
+        return arrayPlayer2Pieces.includes(getCaseClass(HTMLElement.className));
+    }
+
+}
 
 /**
  * Retire une classe selon le joueur courant d'une liste de classe liée à un élément HTML.
@@ -75,13 +90,13 @@ function fonct2(element) {
  */
 function removeSelectedClassByPlayer(classList) {
     if (currentPlayer == 1) {
-        //classList.remove(votreClass);
+        classList.remove("selectedRed");
     } else if (currentPlayer == 2) {
-        //classList.remove(votreClass);
+        classList.remove("selectedBlue");
     }
 }
 
-function rejouer(){
+function rejouer() {
     elements[0].classList.add("tour-noir");
     elements[1].classList.add("cavalier-noir");
     elements[2].classList.add("fou-noir");
@@ -98,8 +113,6 @@ function rejouer(){
     elements[13].classList.add("pion-noir");
     elements[14].classList.add("pion-noir");
     elements[15].classList.add("pion-noir");
-
-
 
 
     elements[48].classList.add("pion-blanc");
@@ -131,11 +144,34 @@ var play = function () {
     if (!currentSelection) {
         selectedHTML = this;
         selectedHTMLClasses = this.className;
-        var piece = getCaseClass(selectedHTMLClasses)
-        currentSelection = true;
+        var piece = getCaseClass(selectedHTMLClasses);
         var classPiece = getCaseClass(selectedHTMLClasses);
-        addSelectedClassByPlayer(this.classList);
+        if (isCaseAllowed(selectedHTML) && !isCaseEmpty(selectedHTML)){
+            currentSelection = true;
+            addSelectedClassByPlayer(this.classList);
+        }
+
     } else {
+        var piece = getCaseClass(selectedHTMLClasses);
+        if (!isCaseAllowed(this) || isCaseEmpty(this)){
+            if (!isCaseEmpty(this)){
+                this.classList.remove(getCaseClass(this.className));
+            }
+            this.classList.add(piece);
+            selectedHTML.classList.remove(piece);
+
+            removeSelectedClassByPlayer(selectedHTML.classList);
+            changePlayer();
+        }else if (this===selectedHTML){
+            alert("1");
+            removeSelectedClassByPlayer(selectedHTML.classList);
+        }else{
+            removeSelectedClassByPlayer(selectedHTML.classList);
+            changePlayer();
+        }
+
+        currentSelection = false;
+
 
     }
 };
