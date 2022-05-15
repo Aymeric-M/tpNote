@@ -76,12 +76,29 @@ function isCaseEmpty(HTMLElement) {
 }
 
 function isCaseAllowed(HTMLElement) {
-    if (currentPlayer===1){
+    if (currentPlayer === 1) {
         return arrayPlayer1Pieces.includes(getCaseClass(HTMLElement.className));
-    }else {
+    } else {
         return arrayPlayer2Pieces.includes(getCaseClass(HTMLElement.className));
     }
 
+}
+
+function endOfGame(pawnSlected) {
+    if (currentPlayer === 1) {
+        if(pawnSlected === "roi-noir"){
+            scorePlayer1++;
+            document.getElementById("scoreJ1").innerHTML = scorePlayer1.toString();
+            rejouer();
+            currentPlayer=2;
+        }
+    } else {
+        if(pawnSlected === "roi-blanc"){
+            scorePlayer2++;
+            document.getElementById("scoreJ2").innerHTML = scorePlayer2.toString();
+            rejouer();
+        }
+    }
 }
 
 /**
@@ -97,6 +114,10 @@ function removeSelectedClassByPlayer(classList) {
 }
 
 function rejouer() {
+    for (let i = 0; i < 64; i++) {
+        elements[i].className = "case";
+
+    }
     elements[0].classList.add("tour-noir");
     elements[1].classList.add("cavalier-noir");
     elements[2].classList.add("fou-noir");
@@ -131,10 +152,20 @@ function rejouer() {
     elements[61].classList.add("fou-blanc");
     elements[62].classList.add("cavalier-blanc");
     elements[63].classList.add("tour-blanc");
-
-
 }
 
+function pointsReset(){
+    scorePlayer1=0;
+    document.getElementById("scoreJ1").innerHTML = scorePlayer1.toString();
+
+    scorePlayer2=0;
+    document.getElementById("scoreJ2").innerHTML = scorePlayer2.toString();
+}
+
+function clearGame() {
+    rejouer();
+    pointsReset();
+}
 
 /**
  * Fonction liée à l'évènement 'click'.
@@ -146,26 +177,30 @@ var play = function () {
         selectedHTMLClasses = this.className;
         var piece = getCaseClass(selectedHTMLClasses);
         var classPiece = getCaseClass(selectedHTMLClasses);
-        if (isCaseAllowed(selectedHTML) && !isCaseEmpty(selectedHTML)){
+        if (isCaseAllowed(selectedHTML) && !isCaseEmpty(selectedHTML)) {
             currentSelection = true;
             addSelectedClassByPlayer(this.classList);
         }
 
     } else {
         var piece = getCaseClass(selectedHTMLClasses);
-        if (!isCaseAllowed(this) || isCaseEmpty(this)){
-            if (!isCaseEmpty(this)){
-                this.classList.remove(getCaseClass(this.className));
+
+        if (!isCaseAllowed(this) || isCaseEmpty(this)) {
+            var piece2 = getCaseClass(this.className);
+            if (!isCaseEmpty(this)) {
+                this.classList.remove(piece2);
             }
             this.classList.add(piece);
             selectedHTML.classList.remove(piece);
 
+
             removeSelectedClassByPlayer(selectedHTML.classList);
+            endOfGame(piece2);
             changePlayer();
-        }else if (this===selectedHTML){
-            alert("1");
+
+        } else if (this === selectedHTML) {
             removeSelectedClassByPlayer(selectedHTML.classList);
-        }else{
+        } else {
             removeSelectedClassByPlayer(selectedHTML.classList);
             changePlayer();
         }
