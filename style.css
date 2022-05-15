@@ -117,31 +117,31 @@ body {
     text-align: center; 
 } 
 
-#score {
-    margin: 5px;  
-    font-size: 1.5em;  
-    height: 30px;    
-    background-color: #aaccbb;  
-    border-radius: 5px;  
-    text-align: center; 
-}
-
-#pionPerdusJ1 {
-    float: left;
+#infoPionsPerdu {
     width: 580px;
     height: 175px;
     margin: auto;
     text-align: center;
     border: 2px solid black;
+
 }
 
-#pionPerdusJ2 {
-    float : right;
-    width: 300px;
-    height: 175px;
-    margin: auto;
-    text-align: center;
-    border: 2px solid black;
+.pionPerdusJ1 {
+    font-size: larger;
+    font-weight: 600;
+    color: blue;
+    float: left;
+    margin-top: 5px;
+    margin-left: 100px;
+}
+
+.pionPerdusJ2 {
+    font-size: larger;
+    font-weight: 600;
+    color: blue;
+    float: left;
+    margin-top: 5px;
+    margin-left: 100px;
 }
 
 .scoreJ1 {
