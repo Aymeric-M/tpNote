@@ -101,9 +101,10 @@ body {
 }
 
 #gameInfo {
-    width: 550px;
+    width: 580px;
     height: 175px;
-    margin: 0 auto;
+    margin: auto;
+    text-align: center;
     border: 2px solid black;
 }
 
@@ -125,6 +126,23 @@ body {
     text-align: center; 
 }
 
+#pionPerdusJ1 {
+    float: left;
+    width: 580px;
+    height: 175px;
+    margin: auto;
+    text-align: center;
+    border: 2px solid black;
+}
+
+#pionPerdusJ2 {
+    float : right;
+    width: 300px;
+    height: 175px;
+    margin: auto;
+    text-align: center;
+    border: 2px solid black;
+}
 
 .scoreJ1 {
     font-size: larger;
@@ -144,18 +162,12 @@ body {
     margin-right: 100px;
 }
 
-#button
-
 #rejouer {
     clear: both;
-    text-align: left;
-    margin-top: 10px;
-    margin-left: 28px;
 }
  
 #clearScore {
     clear: both;
-    text-align: right;
     margin-top: 10px;
     margin-left: 200px;
 
