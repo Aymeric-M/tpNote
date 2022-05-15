@@ -166,7 +166,7 @@ body {
     clear: both;
 }
  
-#clearScore {
+#clearGame {
     clear: both;
     margin-top: 10px;
     margin-left: 200px;
@@ -189,13 +189,3 @@ body {
 
 
 
-.case:nth-child(1) ~ .case:nth-child(-2n+8),
-.case:nth-child(8) ~ .case:nth-child(-2n+15),
-.case:nth-child(16) ~ .case:nth-child(-2n+24),
-.case:nth-child(24) ~ .case:nth-child(-2n+31),
-.case:nth-child(32) ~ .case:nth-child(-2n+40),
-.case:nth-child(40) ~ .case:nth-child(-2n+47),
-.case:nth-child(48) ~ .case:nth-child(-2n+56),
-.case:nth-child(56) ~ .case:nth-child(-2n+63){
-    background-color: #595959;
-}
