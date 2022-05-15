@@ -165,6 +165,8 @@ function pointsReset(){
 function clearGame() {
     rejouer();
     pointsReset();
+    currentPlayer = 1;
+    currentSelection = false;
 }
 
 /**
