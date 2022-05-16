@@ -89,6 +89,7 @@ function endOfGame(pawnSlected) {
         if(pawnSlected === "roi-noir"){
             scorePlayer1++;
             document.getElementById("scoreJ1").innerHTML = scorePlayer1.toString();
+            alert("Le joueur 1 à gagné");
             rejouer();
             currentPlayer=2;
         }
@@ -96,6 +97,7 @@ function endOfGame(pawnSlected) {
         if(pawnSlected === "roi-blanc"){
             scorePlayer2++;
             document.getElementById("scoreJ2").innerHTML = scorePlayer2.toString();
+            alert("Le joueur 2 à gagné");
             rejouer();
         }
     }
