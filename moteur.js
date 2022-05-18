@@ -86,15 +86,15 @@ function isCaseAllowed(HTMLElement) {
 
 function endOfGame(pawnSlected) {
     if (currentPlayer === 1) {
-        if(pawnSlected === "roi-noir"){
+        if (pawnSlected === "roi-noir") {
             scorePlayer1++;
             document.getElementById("scoreJ1").innerHTML = scorePlayer1.toString();
             alert("Le joueur 1 à gagné");
             rejouer();
-            currentPlayer=2;
+            currentPlayer = 2;
         }
     } else {
-        if(pawnSlected === "roi-blanc"){
+        if (pawnSlected === "roi-blanc") {
             scorePlayer2++;
             document.getElementById("scoreJ2").innerHTML = scorePlayer2.toString();
             alert("Le joueur 2 à gagné");
@@ -116,6 +116,12 @@ function removeSelectedClassByPlayer(classList) {
 }
 
 function rejouer() {
+
+    for (let i = 0; i < 32; i++) {
+        caseMange[i].className = "casePionsMange";
+    }
+
+
     for (let i = 0; i < 64; i++) {
         elements[i].className = "case";
 
@@ -156,11 +162,11 @@ function rejouer() {
     elements[63].classList.add("tour-blanc");
 }
 
-function pointsReset(){
-    scorePlayer1=0;
+function pointsReset() {
+    scorePlayer1 = 0;
     document.getElementById("scoreJ1").innerHTML = scorePlayer1.toString();
 
-    scorePlayer2=0;
+    scorePlayer2 = 0;
     document.getElementById("scoreJ2").innerHTML = scorePlayer2.toString();
 }
 
@@ -218,6 +224,7 @@ var play = function () {
 /**
  * On lie tous les éléments avec la classe 'case' à l'événement 'click'.
  */
+var caseMange = document.getElementsByClassName("casePionsMange");
 var elements = document.getElementsByClassName("case");
 for (var i = 0; i < elements.length; i++) {
     elements[i].addEventListener('click', play, false);
