@@ -98,6 +98,11 @@ body {
     text-align: center;
 }
 
+.case:hover{
+    opacity: 0.50;
+}
+
+
 .case:nth-child(1) ~ .case:nth-child(-2n+8),
 .case:nth-child(8) ~ .case:nth-child(-2n+15),
 .case:nth-child(16) ~ .case:nth-child(-2n+24),
@@ -109,21 +114,13 @@ body {
     background-color: #595959;
 }
 .selectedRed{
-    caret-color: firebrick;
-    column-rule-color: firebrick;
-    flood-color: firebrick;
-    solid-color: firebrick;
-    border-block-color: firebrick;
-    background-color: firebrick;
-    border-width: 10px;
-
+    background-color: firebrick !important;
 }
 
 
 
 .selectedBlue{
-    background-color: royalblue;
-    border-width: 10px;
+    background-color: royalblue !important;
 }
 
 #gameInfo {
