@@ -86,7 +86,7 @@ function isCaseAllowed(HTMLElement) {
 
 function endOfGame(pawnSlected) {
     if (currentPlayer === 1) {
-        if (pawnSlected === "roi-noir") {
+        if (pawnSlected === "roi-noir" || nbPionsMangeJ1===16 ) {
             scorePlayer1++;
             document.getElementById("scoreJ1").innerHTML = scorePlayer1.toString();
             alert("Le joueur 1 à gagné");
@@ -94,7 +94,7 @@ function endOfGame(pawnSlected) {
             currentPlayer = 2;
         }
     } else {
-        if (pawnSlected === "roi-blanc") {
+        if (pawnSlected === "roi-blanc" || nbPionsMangeJ2===16 ) {
             scorePlayer2++;
             document.getElementById("scoreJ2").innerHTML = scorePlayer2.toString();
             alert("Le joueur 2 à gagné");
@@ -181,6 +181,19 @@ function clearGame() {
  * Fonction liée à l'évènement 'click'.
  * A MODIFIER
  */
+
+function PionMange(pawnSlected) {
+    if (currentPlayer===1) {
+        caseMange[nbPionsMangeJ2 +16].classList.add(pawnSlected);
+    }
+    else {
+        caseMange[nbPionsMangeJ1].classList.add(pawnSlected);
+    }
+}
+
+var nbPionsMangeJ1=0;
+var nbPionsMangeJ2=0;
+
 var play = function () {
     if (!currentSelection) {
         selectedHTML = this;
@@ -199,9 +212,18 @@ var play = function () {
             var piece2 = getCaseClass(this.className);
             if (!isCaseEmpty(this)) {
                 this.classList.remove(piece2);
+                PionMange(piece2);
+                if(currentPlayer===1){
+                    nbPionsMangeJ2++;
+                }
+                else {
+                    nbPionsMangeJ1++;
+                }
+                
             }
             this.classList.add(piece);
             selectedHTML.classList.remove(piece);
+
 
 
             removeSelectedClassByPlayer(selectedHTML.classList);
