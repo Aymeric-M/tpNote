@@ -1,4 +1,4 @@
-var currentPlayer = 1;
+
 var scorePlayer1 = 0;
 var scorePlayer2 = 0;
 
@@ -46,10 +46,10 @@ function changePlayer() {
  * @param {*} classList liste des classes d'un élément HTML.
  */
 function addSelectedClassByPlayer(classList) {
-    if (currentPlayer == 1) {
-        classList.add("selectedRed");
-    } else if (currentPlayer == 2) {
+    if (currentPlayer === 1) {
         classList.add("selectedBlue");
+    } else if (currentPlayer === 2) {
+        classList.add("selectedRed");
     }
 }
 
@@ -108,10 +108,10 @@ function endOfGame(pawnSlected) {
  * @param {*} classList liste des classes d'un élément HTML.
  */
 function removeSelectedClassByPlayer(classList) {
-    if (currentPlayer == 1) {
-        classList.remove("selectedRed");
-    } else if (currentPlayer == 2) {
+    if (currentPlayer === 1) {
         classList.remove("selectedBlue");
+    } else if (currentPlayer === 2) {
+        classList.remove("selectedRed");
     }
 }
 
