@@ -67,7 +67,7 @@ function fonct2(element) {
     for (let i = 0; i < element.length; i++) {
         alert(element[i]);
     }
-    element[1].innerHTML = '<img src="noir-tour.gif" style="width: 60px;height: 60px;" alt="noir-tour">';
+    element[1].innerHTML = '<img src="../../noir-tour.gif" style="width: 60px;height: 60px;" alt="noir-tour">';
 }
 
 
@@ -99,6 +99,7 @@ function endOfGame(pawnSlected) {
             document.getElementById("scoreJ2").innerHTML = scorePlayer2.toString();
             alert("Le joueur 2 à gagné");
             rejouer();
+            currentPlayer = 2;
         }
     }
 }
@@ -160,6 +161,10 @@ function rejouer() {
     elements[61].classList.add("fou-blanc");
     elements[62].classList.add("cavalier-blanc");
     elements[63].classList.add("tour-blanc");
+
+    nbPionsMangeJ1=0;
+    nbPionsMangeJ2=0;
+    currentPlayer = 1;
 }
 
 function pointsReset() {
@@ -173,7 +178,6 @@ function pointsReset() {
 function clearGame() {
     rejouer();
     pointsReset();
-    currentPlayer = 1;
     currentSelection = false;
 }
 
@@ -224,8 +228,6 @@ var play = function () {
             this.classList.add(piece);
             selectedHTML.classList.remove(piece);
 
-
-
             removeSelectedClassByPlayer(selectedHTML.classList);
             endOfGame(piece2);
             changePlayer();
@@ -250,7 +252,4 @@ var caseMange = document.getElementsByClassName("casePionsMange");
 var elements = document.getElementsByClassName("case");
 for (var i = 0; i < elements.length; i++) {
     elements[i].addEventListener('click', play, false);
-    //if(i===0){
-    //    elements[i].classList.add("cavalier-blanc");
-    //}
 }

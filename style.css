@@ -60,10 +60,7 @@ Style pour les pièces blanches.
 /**
 Style pour le plateau.
 */
-body {
-    margin: 30px;
-    background-color: white;
-}
+
 
 #container {
     display : flex;
@@ -124,6 +121,7 @@ body {
 }
 
 #gameInfo {
+    background-color: lightgray;
     width: 580px;
     height: 175px;
     margin: auto;
@@ -147,6 +145,10 @@ body {
    
 }
 
+body {
+    margin: 30px;
+    background-color: #5883b6;
+}
 
 .infoPionsPerdu {
     width: 300px;
@@ -154,7 +156,7 @@ body {
     margin: auto;
     border: 2px solid black;
     background-size: cover;
-    background-color: #aaccbb;
+    background-color: #558a54;
   
 }
 
