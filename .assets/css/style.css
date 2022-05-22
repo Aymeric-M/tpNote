@@ -3,28 +3,28 @@ Style pour les pièces noires.
 */
 
 .pion-noir {
-    background-image: url("noir-pion.gif");
+    background-image: url("../img/noir-pion.gif");
 }
 
 .tour-noir {
-    background-image: url("noir-tour.gif");
+    background-image: url("../img/noir-tour.gif");
 
 }
 
 .cavalier-noir {
-    background-image: url("noir-cavalier.gif");
+    background-image: url("../img/noir-cavalier.gif");
 }
 
 .fou-noir {
-    background-image: url("noir-fou.gif");
+    background-image: url("../img/noir-fou.gif");
 }
 
 .roi-noir {
-    background-image: url("noir-roi.gif");
+    background-image: url("../img/noir-roi.gif");
 }
 
 .reine-noir {
-    background-image: url("noir-reine.gif");
+    background-image: url("../img/noir-reine.gif");
 }
 
 
@@ -33,27 +33,27 @@ Style pour les pièces blanches.
 */
 
 .pion-blanc {
-    background-image: url("blanc-pion.gif");
+    background-image: url("../img/blanc-pion.gif");
 }
 
 .tour-blanc {
-    background-image: url("blanc-tour.gif");
+    background-image: url("../img/blanc-tour.gif");
 }
 
 .cavalier-blanc {
-    background-image: url("blanc-cavalier.gif");
+    background-image: url("../img/blanc-cavalier.gif");
 }
 
 .fou-blanc {
-    background-image: url("blanc-fou.gif");
+    background-image: url("../img/blanc-fou.gif");
 }
 
 .roi-blanc {
-    background-image: url("blanc-roi.gif");
+    background-image: url("../img/blanc-roi.gif");
 }
 
 .reine-blanc {
-    background-image: url("blanc-reine.gif");
+    background-image: url("../img/blanc-reine.gif");
 }
 
 
@@ -95,17 +95,11 @@ Style pour le plateau.
     text-align: center;
 }
 
-
-/**
-pour faire apparaitre une case en surbrillance lorsqu'on passe la souris dessus
-*/
 .case:hover{
     opacity: 0.50;
 }
 
-/** 8 lignes pour les 8 cases pour choisir la couleur du début et de fin de ligne
-en ajoutant une alternance de couleur.  
-*/
+
 .case:nth-child(1) ~ .case:nth-child(-2n+8),
 .case:nth-child(8) ~ .case:nth-child(-2n+15),
 .case:nth-child(16) ~ .case:nth-child(-2n+24),
@@ -120,20 +114,28 @@ en ajoutant une alternance de couleur.
     background-color: firebrick !important;
 }
 
-/**
-lorsqu'on selectionne un pion, en fonction du tour de jeu,
-si c'est au J1 on colorie en ROuge, en bleu pour le J2
-
-*/
+.hint {
+    background-color: rgba(0,0,0,.1);
+    padding: 4.2%;
+}
+.capture-hint, .hint {
+    background-clip: content-box;
+    border-radius: 50%;
+    box-sizing: border-box;
+    pointer-events: none;
+}
+.capture-hint, .highlight, .hint {
+    height: 12.5%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 12.5%;
+}
 
 .selectedBlue{
     background-color: royalblue !important;
 }
 
-
-/**
-affichage des pions qui sont mangés dans les tableaux faits à cet édifice
-*/
 #gameInfo {
     background-color: lightgray;
     width: 580px;
@@ -193,11 +195,6 @@ body {
     background-position: bottom;
 }
 
-
-/**
-
-affichage du score et des boutons rejouer et restart
-*/
 .scoreJ1 {
     font-size: larger;
     font-weight: 600;

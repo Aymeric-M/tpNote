@@ -198,6 +198,10 @@ function PionMange(pawnSlected) {
 var nbPionsMangeJ1=0;
 var nbPionsMangeJ2=0;
 
+function deplcementChevalier() {
+    
+}
+
 var play = function () {
     if (!currentSelection) {
         selectedHTML = this;
@@ -217,7 +221,7 @@ var play = function () {
             if (!isCaseEmpty(this)) {
                 this.classList.remove(piece2);
                 PionMange(piece2);
-                if(currentPlayer===1){     //lorsque le joueur1 mange un pieu ca l'affiche dans le tableau pions mangés du J2
+                if(currentPlayer===1){
                     nbPionsMangeJ2++;
                 }
                 else {
