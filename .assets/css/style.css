@@ -95,10 +95,18 @@ Style pour le plateau.
     text-align: center;
 }
 
+/**
+pour faire apparaitre une case en surbrillance lorsqu'on passe la souris dessus
+*/
+
 .case:hover{
     opacity: 0.50;
 }
 
+
+/** 8 lignes pour les 8 cases pour choisir la couleur du début et de fin de ligne
+en ajoutant une alternance de couleur.  
+*/
 
 .case:nth-child(1) ~ .case:nth-child(-2n+8),
 .case:nth-child(8) ~ .case:nth-child(-2n+15),
@@ -113,6 +121,11 @@ Style pour le plateau.
 .selectedRed{
     background-color: firebrick !important;
 }
+
+/**
+lorsqu'on selectionne un pion, en fonction du tour de jeu,
+si c'est au J1 on colorie en ROuge, en bleu pour le J2
+*/
 
 .hint {
     background-color: rgba(0,0,0,.1);
@@ -135,6 +148,10 @@ Style pour le plateau.
 .selectedBlue{
     background-color: royalblue !important;
 }
+
+/**
+affichage des pions qui sont mangés dans les tableaux faits à cet édifice
+*/
 
 #gameInfo {
     background-color: lightgray;
@@ -194,6 +211,10 @@ body {
     margin-left: 40px;
     background-position: bottom;
 }
+
+/**
+affichage du score et des boutons rejouer et restart
+*/
 
 .scoreJ1 {
     font-size: larger;
