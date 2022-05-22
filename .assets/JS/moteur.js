@@ -35,9 +35,9 @@ function getCaseClass(selectedClasses) {
 /**
  * Passe au joueur suivant.
  */
-var currentPlayer = 1; //test de thibo
+var currentPlayer = 1; 
 function changePlayer() {
-    //on peut metre ca, c'est plus rapide
+    
     currentPlayer = currentPlayer % 2 + 1;
 }
 
@@ -53,7 +53,7 @@ function addSelectedClassByPlayer(classList) {
     }
 }
 
-//test thibo
+
 function getElementsChildren(element) {
     var elementf = document.getElementsByClassName("wrapper");
 
